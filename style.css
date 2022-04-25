@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+}
+
+#landing {
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url(https://picsum.photos/1920/1200);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#sidebar {
+  background-color: cornflowerblue;
+}
+
+.blogs {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog {
+  background-color: white;
+  margin: 10px;
+  padding: 20px;
+}
+
+.blog a {
+  text-decoration: none;
+  color: black;
+  /* border: 5px solid white; */
+  /* overflow: hidden; */
+}
+
+section,
+#sidebar,
+footer {
+  padding: 20px;
+}
+
+section {
+  min-height: 50vh;
+}
+
+#about {
+  background-color: darkslategrey;
+  color: white;
+}
+
+footer {
+  background-color: gainsboro;
+}
+
+/* GRID STYLING HERE */
+body {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar about about"
+    "sidebar services services"
+    "footer footer footer";
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    grid-template-areas:
+      "header"
+      "about"
+      "services"
+      "sidebar"
+      "footer";
+  }
+}
+
+#landing {
+  grid-area: header;
+}
+#sidebar {
+  grid-area: sidebar;
+}
+#about {
+  grid-area: about;
+}
+#services {
+  grid-area: services;
+}
+#footer {
+  grid-area: footer;
+}
